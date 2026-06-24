@@ -1,0 +1,20 @@
+ 
+@mixin interactive-btn($bg-color, $text-color) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: 12px 24px;
+    font-weight: bold;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover {  
+        filter: brightness(110%);
+        transform: translateY(-2px);
+    }
+    
+    &:active {
+        transform: scale(0.95);
+    }
+}

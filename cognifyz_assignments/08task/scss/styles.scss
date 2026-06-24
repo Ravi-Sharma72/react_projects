@@ -1,0 +1,50 @@
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Base Styles
+body {
+    font-family: $font-main;
+    background-color: $color-bg;
+    color: $color-text;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+// Component Nesting
+.container {
+    background: white;
+    max-width: 800px;
+    padding: 40px;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+
+    // Nesting headings inside the container
+    h1 {
+        color: $color-primary;
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    h2 {
+        color: $color-secondary;
+        font-size: 1.5rem;
+    }
+
+    p {
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+
+    // Applying our Mixin
+    .action-btn {
+        @include interactive-btn($color-primary, white);
+        margin-bottom: 2rem;
+    }
+
+    .api-btn {
+        @include interactive-btn($color-success, white);
+    }
+}
